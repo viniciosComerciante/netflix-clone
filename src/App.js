@@ -1,14 +1,16 @@
 import React from 'react';
 import Tmdb from './tmdb';
-import './App.css';
 import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
+import Header from './components/Header';
+import './App.css';
 
 
 function App() {
 
   const [movieList, setMovieList] = React.useState();
   const [featuredData, setFeaturedData] = React.useState(null);
+  const [blackHeader, setBlackHeader] = React.useState(false);
 
 
   React.useEffect(()=>{
@@ -29,9 +31,16 @@ function App() {
     loadList();
   }, [])
 
+  //useEffect adiciona o efeito de monitoramento do scroll
+
+  React.useEffect(()=>{
+
+  }, [])
 
   return (
     <div className="page">
+      
+      <Header black={blackHeader}></Header>
 
       {featuredData && 
         <FeaturedMovie data={featuredData}/>
