@@ -4,6 +4,7 @@ import MovieRow from './components/MovieRow';
 import FeaturedMovie from './components/FeaturedMovie';
 import Header from './components/Header';
 import './App.css';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -34,6 +35,20 @@ function App() {
   //useEffect adiciona o efeito de monitoramento do scroll
 
   React.useEffect(()=>{
+    
+    const scrollListener = ()=>{
+      if(window.scrollY > 10){
+        setBlackHeader(true);
+      }else{
+        setBlackHeader(false);
+      }
+    }
+    
+    window.addEventListener('scroll', scrollListener);
+
+    return ()=>{
+      window.removeEventListener('scroll', scrollListener);
+    }
 
   }, [])
 
@@ -51,7 +66,8 @@ function App() {
           <MovieRow key={index} sectionTitle={item.title} items={item.items}></MovieRow>
         ))}
       </section>
-
+      
+      <Footer></Footer>
 
     </div>
   );
