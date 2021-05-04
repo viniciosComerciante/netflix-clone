@@ -6,6 +6,12 @@ const FeaturedMovie = ({ data }) => {
   let firstDate = new Date(data.first_air_date);
   let genres = data.genres.map((genre) => genre.name);
 
+  let description = data.overview
+
+  if(description.length > 200){
+    description = description.substring(0, 200)+ '...' ;
+  }
+
   return (
     <section
       className="featured"
@@ -26,7 +32,7 @@ const FeaturedMovie = ({ data }) => {
               {data.number_of_seasons !== 1 ? "s" : ""}
             </div>
           </div>
-          <div className="featured-description">{data.overview}</div>
+          <div className="featured-description">{description}</div>
           <div className="featured-buttons">
             <a href={`/watch/${data.id}`} className="featured-watch-button">
               <BsFillPlayFill /> Assistir
