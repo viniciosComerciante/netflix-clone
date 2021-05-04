@@ -6,13 +6,22 @@ const MovieRow = ({ sectionTitle, items }) => {
 
   const [scrollX, setScrollX] = React.useState(0)
 
+  const imgWidth = 150;
+
+
 
   function handleLeftArrow(){
-    setScrollX((scroll)=> scroll -300)
+    if(scrollX < 0){
+      setScrollX((scroll)=> scroll + imgWidth)
+    }
   }
 
   function handleRightArrow(){
-    setScrollX((scroll)=> scroll +300)
+       if(-scrollX < (items.results.length * imgWidth - window.innerWidth)){
+      setScrollX((scroll)=> scroll - imgWidth
+      )
+    }
+  
   }
 
 
@@ -24,12 +33,12 @@ const MovieRow = ({ sectionTitle, items }) => {
         <MdNavigateBefore style={{fontSize: 50}}/>
       </div>
 
-      <div className="movieRow-right" onClick={handleRightArrow}>
+      <div className="movieRow-right" onClick={handleRightArrow} >
         <MdNavigateNext style={{fontSize: 50}}/>
       </div>
 
-      <div className="movieRow-wrapper" style={{background: 'red'}}>
-        <div className="movieRow-list" style={{ background: 'blue', marginLeft: scrollX }}>
+      <div className="movieRow-wrapper" >
+        <div className="movieRow-list" style={{marginLeft: scrollX, width: items.results.length * imgWidth}}>
           {items.results.length > 0 &&
             items.results.map((item, index) => (
               <div className="movieRow-item" key={index}>

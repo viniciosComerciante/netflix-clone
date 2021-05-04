@@ -3,7 +3,7 @@ import './style.css';
 
 const Header = ({black}) => {
   return (
-    <header className={black && 'header-black'}>
+    <header className={black ? 'header-black': undefined}>
       <div className="header-logo">
         <a href="/">
           <img
