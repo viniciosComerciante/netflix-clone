@@ -1,4 +1,4 @@
-<p align='center'><img width='300' src="/public/netflix.jpeg"/></p>
+<p align='center'><img width='300' src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"/></p>
 <h1 align='center'>Netflix Clone</h1>
 <p align='center'>
 <img src="https://img.shields.io/github/repo-size/viniciosComerciante/netflix-clone">
