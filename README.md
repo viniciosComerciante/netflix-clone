@@ -34,10 +34,11 @@ $ npm start
 ```
 
 <h3>🖼 Layout</h3>
-<img src="/public/images/proffy-layout.PNG">
+<img src="/public/images/screenshot.png">
+<img src="/public/images/screenshot2.png">
 
 ## 📝 Licença
 <p>O projeto se encontra sob licença MIT. Para mais detalhes, acesse <a href='LICENSE'>license<a>.</p>
 
 ---
-<p>Criado com 💙 por <a href='https://github.com/rafaasimi/' target='_blank'>Rafael Simionato</a></p>
+<p>Criado com 💙 por <a href='https://github.com/viniciosComerciante/' target='_blank'>Vinicios Oliveira</a></p>
