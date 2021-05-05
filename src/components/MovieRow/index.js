@@ -1,13 +1,12 @@
 import React from "react";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 import "./style.css";
+import Tmdb from './../../tmdb';
 
-const MovieRow = ({ sectionTitle, items }) => {
+const MovieRow = ({ sectionTitle, items, setSelectedFilm, openModal}) => {
 
   const [scrollX, setScrollX] = React.useState(0)
-
   const imgWidth = 150;
-
 
 
   function handleLeftArrow(){
@@ -22,6 +21,15 @@ const MovieRow = ({ sectionTitle, items }) => {
       )
     }
   
+  }
+
+  function handleImgClick(item){
+    async function getTrailer(){
+      const data = await Tmdb.getMovieTrailer(item.id);
+      setSelectedFilm(data);
+    }
+    getTrailer();
+
   }
 
 
@@ -45,7 +53,9 @@ const MovieRow = ({ sectionTitle, items }) => {
                 <img
                   src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
                   alt={item.original_title}
-                />
+                  onClick={()=> {handleImgClick(item)
+                    openModal()
+                  }}/>
               </div>
             ))}
         </div>

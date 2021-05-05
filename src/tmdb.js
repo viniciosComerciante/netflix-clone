@@ -86,7 +86,14 @@ const json= {
         }
 
         return info;
+    },
+
+    getMovieTrailer: async(movieId)=>{
+        const data = await basicFetch(`/movie/${movieId}/videos?api_key=${API_KEY}`)
+        return data;
     }
+
+    //http://api.themoviedb.org/3
 }
 
 export default json;
