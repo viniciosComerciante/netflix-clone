@@ -13,7 +13,8 @@ const Modal = ({ closeModal, openModal, selectedFilm, setSelectedFilm}) => {
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-container">
-        <div className="modalContent">
+        <button className="btn-sair" onClick={closeModal}>X</button>
+        <div className="modal-content">
 
           {linkFragment?  <iframe className="iframe"
             width="560"
