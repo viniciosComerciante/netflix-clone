@@ -10,6 +10,28 @@
 }
 
 .modal-container{
+    
+    max-width: 960px;
+    display: flex;
+    background-color: #111;
+    display: block;
+}
+
+.moadalcontent{
     padding: 40px;
-    background: #111;
+    background-color: aquamarine;
+}
+
+.iframe{
+    width: 90%;
+    height: 90%;
+}
+
+
+
+
+@media(max-width: 760px){
+    .modal-container{
+        display: flex;
+    }
 }

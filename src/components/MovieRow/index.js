@@ -24,9 +24,22 @@ const MovieRow = ({ sectionTitle, items, setSelectedFilm, openModal}) => {
   }
 
   function handleImgClick(item){
+   
+   
     async function getTrailer(){
-      const data = await Tmdb.getMovieTrailer(item.id);
-      setSelectedFilm(data);
+      
+      let data = await Tmdb.getMovieTrailer(item.id);
+      
+      // se a requisição voltar com erro, ele retorna um objeto com uma propriedade "success = false"
+      
+      if(data.success ===false){
+        console.log('falhou')
+      }else{
+        if(data){
+          console.log(data)
+          setSelectedFilm(data);
+        }
+      }
     }
     getTrailer();
 

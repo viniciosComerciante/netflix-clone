@@ -4,8 +4,10 @@ import "./style.css";
 const Modal = ({ closeModal, openModal, selectedFilm, setSelectedFilm}) => {
   
   let linkFragment = null;
-  if(selectedFilm && selectedFilm.results.length >=1){
-    linkFragment = selectedFilm.results[0].key
+  if(selectedFilm){
+    if(selectedFilm.results.length >=1){
+      linkFragment = selectedFilm.results[0].key
+    }
   }
 
   return (
@@ -13,7 +15,7 @@ const Modal = ({ closeModal, openModal, selectedFilm, setSelectedFilm}) => {
       <div className="modal-container">
         <div className="modalContent">
 
-          {linkFragment?  <iframe
+          {linkFragment?  <iframe className="iframe"
             width="560"
             height="315"
             src={`https://www.youtube.com/embed/${linkFragment}`}
