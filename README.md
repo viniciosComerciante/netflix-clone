@@ -34,8 +34,8 @@ $ npm start
 ```
 
 <h3>🖼 Layout</h3>
-<img src="/public/images/screenshot.png">
-<img src="/public/images/screenshot2.png">
+<img src="/public/screenshot.png">
+<img src="/public/screenshot2.png">
 
 ## 📝 Licença
 <p>O projeto se encontra sob licença MIT. Para mais detalhes, acesse <a href='LICENSE'>license<a>.</p>
